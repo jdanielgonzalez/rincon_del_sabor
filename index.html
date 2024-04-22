@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rincon del sabor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="imagenes/icono.jpg">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+
+</head>
+<body>
+    <header>
+        <img src="imagenes/banner.jpg" alt="Banner de la página" style="width: 100%; height: 150px;">
+        <a href="index.html">
+            <img src="imagenes/home.png" alt="Botón de inicio" class="home" style="width: 2%; height: auto;">
+        </a>
+    </header>
+    <main>
+        <div class="contenedor-buscador">
+            <input type="text" id="input-buscador" placeholder="Escribe para buscar...">
+            <button id="bnt-buscador" ><img src="imagenes/lupa.png" alt="Buscar"></button>
+            <select id="tipo-buscador">
+                <option value="s">Nombre del Plato</option>
+                <option value="i">Ingrediente Principal</option>
+                <option value="c">Categoría</option>
+                <option value="a">Area (Nacionalidad)</option>
+            </select>
+        </div>
+        <div id="message" style="display: none;"></div>
+        <div id="results-container" class="grid-container"></div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
