@@ -1,0 +1,118 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.home {
+    position: absolute;
+    left: 95%;
+    top: 30px; 
+    width: 40px;
+    height: auto;
+    z-index: 1;
+    cursor: pointer;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.home:hover {
+    background-color: #db5f0062;
+}
+
+main {
+    margin-left: 10%;
+    margin-right: 10%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.meal-name {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    font-size: 50px;
+    color: #201e1e;
+    text-align: center;
+    padding: 1%;
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.meal-name:after {
+    display: inline-block;
+    margin: 0 0 8px 20px;
+    height: 5px;
+    content: " ";
+    text-shadow: none;
+    background-color: #51001a;
+    width: 30%;
+}
+.meal-name:before {
+    display: inline-block;
+    margin: 0 20px 8px 0;
+    height: 5px;
+    content: " ";
+    text-shadow: none;
+    background-color: #51001a;
+    width: 30%;
+}
+
+.meal-image-container {
+    width: 100%;
+    height: auto; 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+}
+
+.meal-image-container img {
+    margin-left: 25%;
+    width: 60%;
+    height: auto; 
+    border-radius: 15px;
+    overflow: hidden;    
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.video-container{
+    margin: 5%;
+    text-align: center;
+}
+
+.ingredient-title{
+    margin-top: 0;
+    font-size: 50px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #201e1e;
+}
+
+.ingredient-list{
+    margin-top: 0;
+    font-size: 25px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #201e1e;
+}
+
+.instructions-title{
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 0;
+    font-size: 50px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #201e1e;
+}
+
+.instructions{    
+    margin-top: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    font-size: 25px;
+    text-align: justify;
+    font-family: "Roboto", sans-serif;
+}

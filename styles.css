@@ -97,7 +97,8 @@ main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(6, auto);
-    grid-gap: 3%; 
+    grid-row-gap: 2%; 
+    grid-column-gap: 5%;
 }
 
 .meal-card {

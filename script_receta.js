@@ -32,37 +32,65 @@ function displayMealInfo(meal) {
     mealInfo.innerHTML = "";
 
     const mealName = document.createElement("h2");
+    mealName.classList.add("meal-name");
     mealName.textContent = meal.strMeal;
 
+    const mealImageContainer = document.createElement("div");
+    const ingredientContainer = document.createElement("div");
+
+    mealImageContainer.classList.add("meal-image-container");
     const mealImage = document.createElement("img");
     mealImage.src = meal.strMealThumb;
     mealImage.alt = meal.strMeal;
+    mealImageContainer.appendChild(mealImage);
 
     const ingredientsTitle = document.createElement("h3");
+    ingredientsTitle.classList.add("ingredient-title");
     ingredientsTitle.textContent = "Ingredientes:";
 
     const ingredientsList = document.createElement("ul");
+    ingredientsList.classList.add("ingredient-list");
     for (let i = 1; i <= 20; i++) {
         const ingredient = meal["strIngredient" + i];
-        if (ingredient) {
+        const measure = meal["strMeasure" + i];
+        if (ingredient && measure) {
             const ingredientItem = document.createElement("li");
-            ingredientItem.textContent = ingredient;
+            ingredientItem.textContent = `${measure} ${ingredient}`;
             ingredientsList.appendChild(ingredientItem);
         }
     }
 
+    ingredientContainer.appendChild(ingredientsTitle);
+    ingredientContainer.appendChild(ingredientsList);
+
+    mealImageContainer.appendChild(ingredientContainer);
+
     const instructionsTitle = document.createElement("h3");
     instructionsTitle.textContent = "Instrucciones de Preparación:";
+    instructionsTitle.classList.add("instructions-title");
 
     const instructions = document.createElement("p");
     instructions.textContent = meal.strInstructions;
+    instructions.classList.add("instructions");
 
     mealInfo.appendChild(mealName);
-    mealInfo.appendChild(mealImage);
-    mealInfo.appendChild(ingredientsTitle);
-    mealInfo.appendChild(ingredientsList);
+    mealInfo.appendChild(mealImageContainer);
     mealInfo.appendChild(instructionsTitle);
     mealInfo.appendChild(instructions);
+
+    if (meal.strYoutube) {
+        const videoContainer = document.createElement("div");
+        const videoTitle = document.createElement("div");
+        const video = document.createElement("iframe");
+        video.src = meal.strYoutube.replace("watch?v=", "embed/");
+        video.width = "560";
+        video.height = "315";
+        video.allowFullscreen = true;
+        video.classList.add("video");
+        videoContainer.classList.add("video-container");
+        videoContainer.appendChild(video);
+        mealInfo.appendChild(videoContainer);
+    }
 }
 
 function showMessage(message) {
