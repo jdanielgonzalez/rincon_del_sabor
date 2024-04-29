@@ -4,6 +4,17 @@ body {
     padding: 0;
 }
 
+header{
+    background-color: #51001a;
+    display: flex;
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+}
+
+.banner{
+    align-items: center;
+}
+
 .home {
     position: absolute;
     left: 95%;
@@ -141,7 +152,7 @@ main {
 }
 
 .meal-image-container.img-hover img {
-    transition: 1s;
+    transition: 0.5s;
     box-shadow: 0px 30px 18px -8px rgba(0, 0, 0,0.1);
     transform: scale(1.2, 1.2) translateY(7%);
     opacity: 0.7;
@@ -149,7 +160,7 @@ main {
 }
 
 .meal-card span.span-hover {
-    transition: 1s;
+    transition: 0.5s;
     background-color: #51001a;
     color: white;
     transform: scale(1.5, 1.5) translateY(-25px);

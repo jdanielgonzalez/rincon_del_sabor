@@ -17,6 +17,7 @@ function getMealDetails(mealName) {
         .then(data => {
             if (data.meals === null) {
                 showMessage("No se encontró información detallada para esta receta.");
+                mealInfo.innerHTML = "";
             } else {
                 displayMealInfo(data.meals[0]);
             }
@@ -34,6 +35,9 @@ function displayMealInfo(meal) {
     const mealName = document.createElement("h2");
     mealName.classList.add("meal-name");
     mealName.textContent = meal.strMeal;
+
+    const imgIngredientContainer = document.createElement("div");
+    imgIngredientContainer.classList.add("img-ingredient-container");
 
     const mealImageContainer = document.createElement("div");
     const ingredientContainer = document.createElement("div");
@@ -59,11 +63,10 @@ function displayMealInfo(meal) {
             ingredientsList.appendChild(ingredientItem);
         }
     }
-
     ingredientContainer.appendChild(ingredientsTitle);
     ingredientContainer.appendChild(ingredientsList);
-
-    mealImageContainer.appendChild(ingredientContainer);
+    imgIngredientContainer.appendChild(mealImageContainer)
+    imgIngredientContainer.appendChild(ingredientContainer);
 
     const instructionsTitle = document.createElement("h3");
     instructionsTitle.textContent = "Instrucciones de Preparación:";
@@ -74,7 +77,7 @@ function displayMealInfo(meal) {
     instructions.classList.add("instructions");
 
     mealInfo.appendChild(mealName);
-    mealInfo.appendChild(mealImageContainer);
+    mealInfo.appendChild(imgIngredientContainer);
     mealInfo.appendChild(instructionsTitle);
     mealInfo.appendChild(instructions);
 

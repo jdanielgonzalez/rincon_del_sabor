@@ -3,6 +3,17 @@ body {
     padding: 0;
 }
 
+header{
+    background-color: #51001a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner{
+    align-items: center;
+}
+
 .home {
     position: absolute;
     left: 95%;
@@ -56,7 +67,7 @@ main {
     width: 30%;
 }
 
-.meal-image-container {
+.img-ingredient-container {
     width: 100%;
     height: auto; 
     display: grid;
@@ -64,13 +75,19 @@ main {
     grid-template-rows: auto;
 }
 
+.meal-image-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .meal-image-container img {
-    margin-left: 25%;
     width: 60%;
     height: auto; 
     border-radius: 15px;
     overflow: hidden;    
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+
 }
 
 .video-container{

@@ -24,7 +24,7 @@ function buildApiUrl(query, criteria) {
 }
 
 function performSearch(query, criteria) {
-    const apiUrl = buildApiUrl(query, criteria); // Ejemplo de búsqueda por nombre de plato
+    const apiUrl = buildApiUrl(query, criteria);
 
     console.log(apiUrl)
     fetch(apiUrl)
@@ -32,6 +32,8 @@ function performSearch(query, criteria) {
         .then(data => {
             if (data.meals === null) {
                 showMessage("No se encontraron resultados para esta búsqueda.");
+                const resultsContainer = document.getElementById("results-container");
+                resultsContainer.innerHTML = "";
             } else {
                 displayResults(data.meals);
                 removeMessageIfExists();
@@ -59,7 +61,7 @@ function displayResults(meals) {
         mealImage.alt = meal.strMeal;
         mealImageContainer.appendChild(mealImage);
 
-        const mealName = document.createElement("span"); // Cambiamos de <h3> a <span>
+        const mealName = document.createElement("span");
         mealName.textContent = meal.strMeal;
 
         mealCard.appendChild(mealImageContainer);
